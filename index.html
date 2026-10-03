@@ -119,6 +119,16 @@
   .hero__proof{display:flex;gap:14px;flex-wrap:wrap;font-size:.9rem;color:rgba(255,255,255,.55);font-weight:500}
   .hero__proof i{font-style:normal;color:var(--lime)}
 
+  .review{background:var(--bg-soft);padding:clamp(40px,6vw,64px) var(--pad)}
+  .review__card{max-width:760px;margin:0 auto;text-align:center}
+  .review__stars{color:#f5b301;font-size:1.35rem;letter-spacing:4px;margin-bottom:14px}
+  .review__quote{font-family:var(--font-head);font-weight:600;font-size:clamp(1.35rem,3vw,1.9rem);line-height:1.3;color:var(--ink);margin:0 0 16px}
+  .review__who{font-size:.95rem;color:rgba(13,14,11,.6);font-weight:500}
+  .review__who a{color:var(--lime-deep);text-decoration:none;font-weight:600}
+  .review__who a:hover{text-decoration:underline}
+  .hero__proof a{color:inherit;text-decoration:none}
+  .hero__proof a b{color:#f5b301;font-weight:600;letter-spacing:1px}
+  .hero__proof a:hover{color:#fff}
   .statsbar{background:var(--lime)}
   .statsbar__inner{
     max-width:var(--wrap);margin:0 auto;padding:22px var(--pad);
@@ -280,7 +290,7 @@
         <a class="btn btn--ghost btn--l" href="#work">Filme ansehen</a>
       </div>
       <div class="hero__proof" data-reveal>
-        <span>2 aktuelle Filme unten</span><i>·</i><span>Vorschau vorab</span><i>·</i><span>Festpreis, keine Überraschungen</span>
+        <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener"><b>★★★★★</b> 5,0 auf Google</a><i>·</i><span>Vorschau vorab</span><i>·</i><span>Festpreis, keine Überraschungen</span>
       </div>
     </div>
   </section>
@@ -292,6 +302,14 @@
       <div class="statsbar__item" data-reveal><strong>2 Formate</strong><span>Exposé + Instagram Reels</span></div>
       <div class="statsbar__item" data-reveal><strong>1 Ziel</strong><span>aus Klicks Anfragen machen</span></div>
     </div>
+  </section>
+
+  <section class="review" aria-label="Kundenstimme">
+    <figure class="review__card" data-reveal>
+      <div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+      <blockquote class="review__quote">„Professionell, schnell, zuverlässig. Vielen Dank!“</blockquote>
+      <figcaption class="review__who">P. Sabado, Immobilienmakler aus Düsseldorf · <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener">Bewertung auf Google ansehen</a></figcaption>
+    </figure>
   </section>
 
   <section class="work" id="work">
