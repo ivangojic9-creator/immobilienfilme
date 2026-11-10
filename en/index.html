@@ -219,6 +219,8 @@
     color:rgba(255,255,255,.4);font-size:.85rem;
   }
   .footer__inner p:last-child{max-width:60ch}
+  .footer__legal{white-space:nowrap}
+  .footer__legal a{color:rgba(255,255,255,.85);text-decoration:underline;text-underline-offset:3px}
 
   [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
   [data-reveal].is-in{opacity:1;transform:none}
@@ -393,6 +395,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <p>© 2026 Ivan Gojic — Listing Films</p>
+    <p class="footer__legal"><a href="../impressum.html">Legal notice</a> · <a href="../datenschutz.html">Privacy</a></p>
     <p>The films shown are unsolicited demo pieces created from publicly listed photos to demonstrate the technique. They are not client work and are not affiliated with the listing agents or brokerages involved.</p>
   </div>
 </footer>
