@@ -3,456 +3,485 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ivan Gojic — Immobilienfilme aus Exposé-Fotos, geliefert in 48h</title>
-<meta name="description" content="Cineastische Immobilienfilme aus vorhandenen Exposé-Fotos — ohne Drehtag, ohne Anreise. Vorschau-Clip vorab, voller Film 48 Stunden nach Freigabe.">
+<title>Ivan Gojic | Immobilienfilme aus Exposé-Fotos</title>
+<meta name="description" content="Komplette Objektfilme aus Ihren vorhandenen Exposé-Fotos. Ohne Drehtag, ohne Termin vor Ort. Querformat und Hochformat für Instagram, fertig in 48 Stunden.">
+<link rel="preload" href="films/hero.jpg" as="image">
 <style>
-  @font-face {
-    font-family: "Space Grotesk";
-    src: url(fonts/sg-latin.woff2) format("woff2");
-    font-weight: 300 700;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Inter";
-    src: url(fonts/inter-latin.woff2) format("woff2");
-    font-weight: 100 900;
-    font-display: swap;
-  }
+  @font-face{font-family:"Space Grotesk";src:url(fonts/sg-latin.woff2) format("woff2");font-weight:300 700;font-display:swap}
+  @font-face{font-family:"Inter";src:url(fonts/inter-latin.woff2) format("woff2");font-weight:100 900;font-display:swap}
 
   :root{
-    --ink:#0d0e0b;
-    --ink-2:#3c3e38;
-    --ink-3:#7a7d73;
-    --bg:#ffffff;
-    --bg-soft:#f4f5f1;
-    --dark:#0d0e0b;
-    --dark-2:#161711;
-    --lime:#6cb2ff;
-    --lime-deep:#3d8fe6;
-    --line:#e4e6df;
-    --line-dark:rgba(255,255,255,.14);
-    --radius:20px;
-    --radius-s:14px;
-    --font-head:"Space Grotesk",-apple-system,"Segoe UI",sans-serif;
-    --font-body:"Inter",-apple-system,"Segoe UI",sans-serif;
-    --shadow-m:0 2px 8px rgba(13,14,11,.06),0 18px 44px rgba(13,14,11,.1);
-    --wrap:1160px;
-    --pad:clamp(20px,4vw,44px);
+    --bg:#0f0e0c;
+    --bg-2:#171613;
+    --bg-3:#1f1d19;
+    --paper:#f5f1ea;
+    --paper-2:#ebe5da;
+    --text:#f3efe8;
+    --text-2:rgba(243,239,232,.72);
+    --text-3:rgba(243,239,232,.5);
+    --ink:#171613;
+    --ink-2:#4a463e;
+    --ink-3:#7c766b;
+    --gold:#d2ad6e;
+    --gold-2:#b8914f;
+    --line:rgba(243,239,232,.12);
+    --line-ink:#ddd5c6;
+    --radius:18px;
+    --head:"Space Grotesk",-apple-system,"Segoe UI",sans-serif;
+    --body:"Inter",-apple-system,"Segoe UI",sans-serif;
+    --wrap:1200px;
+    --pad:clamp(16px,4vw,44px);
   }
-
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    font-family:var(--font-body);background:var(--bg);color:var(--ink);
-    line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
+  body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   img,video{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
-  ::selection{background:var(--lime);color:var(--ink)}
+  ::selection{background:var(--gold);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
 
-  .h2{
-    font-family:var(--font-head);font-weight:700;
-    font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.05;letter-spacing:-.02em;
-  }
-  .h2--light{color:#fff}
-  .muted{color:var(--ink-3)}
-  .eyebrow{
-    display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--lime-deep);margin-bottom:14px;
-  }
-  .eyebrow--dark{color:var(--lime)}
-  .section__head{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) 44px}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .h2{font-family:var(--head);font-weight:600;font-size:clamp(1.9rem,4.4vw,3.1rem);line-height:1.08;letter-spacing:-.02em;max-width:20ch}
+  .lead{font-size:clamp(1rem,1.4vw,1.15rem);color:var(--text-2);max-width:56ch;margin-top:18px}
+  section{scroll-margin-top:70px}
 
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:9px;
-    font-family:var(--font-head);font-weight:600;font-size:.95rem;line-height:1;
-    padding:15px 26px;border-radius:999px;min-height:44px;
-    transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
-    cursor:pointer;white-space:nowrap;
-  }
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--head);font-weight:600;font-size:.98rem;line-height:1;padding:16px 26px;border-radius:999px;min-height:48px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease,color .18s ease;cursor:pointer;border:0;white-space:nowrap}
   .btn:active{transform:scale(.97)}
-  .btn--lime{background:var(--lime);color:var(--ink);box-shadow:0 6px 20px rgba(108,178,255,.35)}
-  .btn--lime:hover{background:var(--lime-deep);transform:translateY(-2px)}
-  .btn--ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--line-dark)}
-  .btn--ghost:hover{box-shadow:inset 0 0 0 1.5px #fff}
-  .btn--ghostlight{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--line-dark)}
-  .btn--ghostlight:hover{box-shadow:inset 0 0 0 1.5px var(--lime);color:var(--lime)}
-  .btn--s{padding:11px 18px;font-size:.88rem}
-  .btn--l{padding:18px 32px;font-size:1rem}
-  .btn svg{transition:transform .18s ease}
-  .btn:hover svg{transform:translateX(3px)}
+  .btn--gold{background:var(--gold);color:var(--ink)}
+  .btn--gold:hover{background:#e0bf85;transform:translateY(-2px)}
+  .btn--line{background:rgba(15,14,12,.35);color:var(--text);box-shadow:inset 0 0 0 1.5px rgba(243,239,232,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .btn--line:hover{box-shadow:inset 0 0 0 1.5px var(--text)}
+  .btn--s{padding:11px 18px;min-height:40px;font-size:.88rem}
 
-  .nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(13,14,11,.85);
-    backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);
-    border-bottom:1px solid var(--line-dark);
-  }
-  .nav__inner{
-    max-width:var(--wrap);margin:0 auto;padding:14px var(--pad);
-    display:flex;align-items:center;justify-content:space-between;gap:20px;
-  }
-  .nav__brand{font-family:var(--font-head);font-weight:700;font-size:1.1rem;color:#fff}
-  .nav__brand span{color:var(--ink-3);font-weight:500;font-size:.85rem;margin-left:10px}
-  .nav__links{display:flex;gap:26px;font-weight:600;font-size:.9rem;color:rgba(255,255,255,.72)}
-  .nav__links a{transition:color .18s}
-  .nav__links a:hover{color:var(--lime)}
+  /* Nav */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s ease,border-color .3s ease;border-bottom:1px solid transparent}
+  .nav.is-solid{background:rgba(15,14,12,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+  .nav__inner{max-width:var(--wrap);margin:0 auto;padding:14px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .nav__brand{font-family:var(--head);font-weight:600;font-size:1.05rem;white-space:nowrap}
+  .nav__brand span{color:var(--text-3);font-weight:400;margin-left:8px}
+  .nav__links{display:flex;gap:28px;font-size:.9rem;font-weight:500;color:var(--text-2)}
+  .nav__links a:hover{color:var(--gold)}
 
-  .hero{background:var(--dark);color:#fff;padding:clamp(70px,12vh,130px) 0 clamp(60px,9vh,100px);position:relative;overflow:hidden}
-  .hero::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(900px 500px at 85% -10%,rgba(108,178,255,.15),transparent 60%);
-  }
-  .hero__inner{position:relative;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-  .hero__eyebrow{
-    display:inline-block;font-weight:600;font-size:.85rem;color:rgba(255,255,255,.65);
-    border:1px solid var(--line-dark);border-radius:999px;padding:8px 18px;margin-bottom:30px;
-  }
-  .hero__title{
-    font-family:var(--font-head);font-weight:700;
-    font-size:clamp(2.7rem,7vw,5.2rem);line-height:1.02;letter-spacing:-.025em;
-    margin-bottom:26px;max-width:22ch;
-  }
-  .hero__title em{font-style:normal;color:var(--lime)}
-  .hero__sub{font-size:clamp(1.02rem,1.5vw,1.25rem);color:rgba(255,255,255,.72);max-width:54ch;margin-bottom:34px}
-  .hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
-  .hero__proof{display:flex;gap:14px;flex-wrap:wrap;font-size:.9rem;color:rgba(255,255,255,.55);font-weight:500}
-  .hero__proof i{font-style:normal;color:var(--lime)}
+  /* Hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#000;padding-top:96px}
+  .hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,14,12,.72) 0%,rgba(15,14,12,.35) 48%,rgba(15,14,12,0) 75%),linear-gradient(180deg,rgba(15,14,12,.55) 0%,rgba(15,14,12,.1) 28%,rgba(15,14,12,.4) 60%,rgba(15,14,12,.96) 100%)}
+  .hero__inner{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad) clamp(48px,9vh,96px)}
+  .hero__title{font-family:var(--head);font-weight:600;font-size:clamp(2.5rem,6.6vw,5.4rem);line-height:1.02;letter-spacing:-.03em;max-width:16ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .hero__title em{font-style:normal;color:var(--gold)}
+  .hero__sub{font-size:clamp(1.02rem,1.5vw,1.22rem);color:rgba(243,239,232,.86);max-width:50ch;margin:22px 0 30px}
+  .hero__cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero__proof{display:flex;gap:10px 18px;flex-wrap:wrap;margin-top:28px;font-size:.9rem;color:var(--text-2)}
+  .hero__proof b{color:var(--gold);letter-spacing:2px;font-weight:600;margin-right:6px}
+  .hero__caption{position:absolute;right:var(--pad);bottom:20px;z-index:2;font-size:.74rem;letter-spacing:.08em;color:var(--text-3)}
 
-  .review{background:var(--bg-soft);padding:clamp(40px,6vw,64px) var(--pad)}
-  .review__card{max-width:760px;margin:0 auto;text-align:center}
-  .review__stars{color:#f5b301;font-size:1.35rem;letter-spacing:4px;margin-bottom:14px}
-  .review__quote{font-family:var(--font-head);font-weight:600;font-size:clamp(1.35rem,3vw,1.9rem);line-height:1.3;color:var(--ink);margin:0 0 16px}
-  .review__who{font-size:.95rem;color:rgba(13,14,11,.6);font-weight:500}
-  .review__who a{color:var(--lime-deep);text-decoration:none;font-weight:600}
-  .review__who a:hover{text-decoration:underline}
-  .hero__proof a{color:inherit;text-decoration:none}
-  .hero__proof a b{color:#f5b301;font-weight:600;letter-spacing:1px}
-  .hero__proof a:hover{color:#fff}
-  .statsbar{background:var(--lime)}
-  .statsbar__inner{
-    max-width:var(--wrap);margin:0 auto;padding:22px var(--pad);
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
-  }
-  .statsbar__item{display:flex;flex-direction:column;line-height:1.25}
-  .statsbar__item strong{font-family:var(--font-head);font-weight:700;font-size:1.5rem;color:var(--ink)}
-  .statsbar__item span{font-size:.85rem;color:rgba(13,14,11,.65);font-weight:500}
+  /* Facts strip */
+  .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+  .facts__inner{max-width:var(--wrap);margin:0 auto;padding:26px var(--pad);display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .fact strong{display:block;font-family:var(--head);font-weight:600;font-size:1.45rem;color:var(--text)}
+  .fact span{font-size:.86rem;color:var(--text-3)}
 
-  .work{padding:clamp(80px,12vh,140px) 0 0}
-  .work__grid{
-    max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
-    display:grid;grid-template-columns:1fr;gap:44px;
-  }
-  .filmcard{
-    background:var(--bg-soft);border-radius:var(--radius);overflow:hidden;
-    transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s ease;
-  }
-  .filmcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-m)}
-  .filmcard video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#0d0e0b}
-  .filmcard__body{padding:24px 26px 28px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:baseline}
-  .filmcard__head h3{font-family:var(--font-head);font-weight:700;font-size:1.3rem}
-  .filmcard__tag{font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-  .filmcard__note{font-size:.94rem;color:var(--ink-2);max-width:52ch}
-  .work__note{max-width:62ch;margin:2.2rem auto 0;text-align:center;font-size:1.02rem;color:var(--ink-2)}
+  /* Featured film */
+  .featured{padding:clamp(80px,12vh,140px) 0 0}
+  .featured__grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(20px,3vw,36px);align-items:end;margin-top:44px}
+  .player{position:relative;border-radius:var(--radius);overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .player video{width:100%;height:100%;object-fit:cover;background:#000}
+  .player--wide{aspect-ratio:16/9}
+  .player--tall{aspect-ratio:9/16}
+  .phone{border-radius:34px;padding:9px;background:#26241f;box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.08)}
+  .phone .player{border-radius:26px;box-shadow:none}
+  .label{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:.88rem;color:var(--text-3)}
+  .label strong{color:var(--text);font-weight:600;font-family:var(--head);font-size:1.02rem}
+  .tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(210,173,110,.4);border-radius:999px;padding:5px 11px}
 
-  .offer{
-    background:var(--dark);color:#fff;margin-top:clamp(80px,12vh,140px);
-    padding:clamp(80px,12vh,140px) 0;
-  }
-  .offer__steps{
-    max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);
-    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-  }
-  .ostep{
-    background:rgba(255,255,255,.05);border:1px solid var(--line-dark);
-    border-radius:var(--radius);padding:32px 28px;
-    transition:background .25s ease,transform .25s ease;
-  }
-  .ostep:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
-  .ostep__n{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:42px;height:42px;border-radius:50%;background:var(--lime);color:var(--ink);
-    font-family:var(--font-head);font-weight:700;font-size:1.05rem;margin-bottom:18px;
-  }
-  .ostep h3{font-family:var(--font-head);font-weight:700;font-size:1.25rem;margin-bottom:10px}
-  .ostep p{color:rgba(255,255,255,.68);font-size:.95rem}
-  .offer__note{
-    max-width:var(--wrap);margin:34px auto 0;padding:0 var(--pad);
-    color:rgba(255,255,255,.6);font-size:1rem;
-  }
-  .offer__note strong{color:var(--lime)}
+  .yours{margin-top:34px;display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:start;background:var(--bg-2);border:1px solid rgba(210,173,110,.35);border-radius:var(--radius);padding:26px 28px}
+  .yours__icon{width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center}
+  .yours h3{font-family:var(--head);font-weight:600;font-size:1.2rem;margin-bottom:6px}
+  .yours p{color:var(--text-2);font-size:.98rem;max-width:70ch}
+  .yours ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .yours li{font-size:.82rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--text)}
+  .more__all{display:flex;justify-content:center;margin-top:34px}
+  .more--page{padding-top:clamp(120px,16vh,170px)}
+  .more--page h1.h2{max-width:22ch}
+  .clips__note{margin-top:28px;font-size:.92rem;color:var(--text-3)}
+  /* More films */
+  .more{padding:clamp(70px,10vh,120px) 0 0}
+  .group{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);margin:48px 0 -20px}
+  .films{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;align-items:start}
+.films--teaser,.more--page .films{grid-template-columns:repeat(2,1fr);max-width:900px}
+  .film{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .film__media{position:relative;aspect-ratio:16/9;background:#000;transition:aspect-ratio .35s ease}
+  .film.is-tall .film__media{aspect-ratio:9/16;max-height:620px;margin:0 auto;width:100%}
+  .film__media video{width:100%;height:100%;object-fit:contain;background:#000}
+  .film__body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .film__body .tag{align-self:flex-start}
+  .film__body h3{font-family:var(--head);font-weight:600;font-size:1.15rem;line-height:1.25}
+  .film__body p{font-size:.92rem;color:var(--text-2)}
+  .switch{display:inline-flex;background:var(--bg-3);border-radius:999px;padding:4px;gap:4px;align-self:flex-start;margin-top:auto}
+  .switch button{font:600 .8rem var(--body);color:var(--text-2);background:none;border:0;border-radius:999px;padding:8px 14px;cursor:pointer;min-height:36px}
+  .switch button[aria-pressed="true"]{background:var(--text);color:var(--ink)}
 
+  /* Preview vs film */
   .compare{padding:clamp(80px,12vh,140px) 0 0}
-  .compare__wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);overflow-x:auto}
-  .compare__table{
-    width:100%;border-collapse:collapse;font-size:.95rem;min-width:640px;
-    background:var(--bg);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-m);
-  }
-  .compare__table th,.compare__table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
-  .compare__table thead th{
-    font-family:var(--font-head);font-weight:700;font-size:.95rem;background:var(--bg-soft);
-  }
-  .compare__table td:first-child{font-weight:600;color:var(--ink-2)}
-  .compare__table .me{background:rgba(108,178,255,.15);font-weight:600}
-  .compare__table thead .me{background:var(--lime)}
-  .compare__table tr:last-child td{border-bottom:0}
-  .compare__how{
-    max-width:760px;margin:36px auto 0;padding:0 var(--pad);
-    color:var(--ink-2);font-size:1.02rem;line-height:1.7;
-  }
+  .compare__grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+  .compare__item p{margin-top:14px;font-size:.95rem;color:var(--text-2)}
+  .compare__item h3{font-family:var(--head);font-weight:600;font-size:1.1rem;margin-top:16px;display:flex;align-items:center;gap:10px}
+  .pill{font:600 .7rem var(--body);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:4px 10px;background:var(--bg-3);color:var(--text-3)}
+  .pill--gold{background:var(--gold);color:var(--ink)}
 
+  /* Paper sections */
+  .paper{background:var(--paper);color:var(--ink);margin-top:clamp(80px,12vh,140px);padding:clamp(80px,12vh,140px) 0}
+  .paper .eyebrow{color:var(--gold-2)}
+  .paper .lead{color:var(--ink-2)}
+  .inside{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:start}
+  .inside__list{list-style:none;border-top:1px solid var(--line-ink)}
+  .inside__list li{display:flex;gap:16px;align-items:baseline;padding:17px 0;border-bottom:1px solid var(--line-ink);font-size:1.02rem}
+  .inside__list li b{font-family:var(--head);font-weight:600;min-width:2.2em;color:var(--gold-2)}
+  .inside__note{margin-top:22px;font-size:.95rem;color:var(--ink-3)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:70px}
+  .step{background:#fff;border:1px solid var(--line-ink);border-radius:var(--radius);padding:28px 26px}
+  .step__n{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.14em;color:var(--gold-2)}
+  .step h3{font-family:var(--head);font-weight:600;font-size:1.2rem;margin:10px 0 8px}
+  .step p{font-size:.95rem;color:var(--ink-2)}
+
+  /* Versus */
+  .versus{padding:clamp(80px,12vh,140px) 0 0}
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px}
+  .vs__col{border-radius:var(--radius);padding:30px 28px;border:1px solid var(--line);background:var(--bg-2)}
+  .vs__col--me{border-color:rgba(210,173,110,.5);background:linear-gradient(180deg,rgba(210,173,110,.1),rgba(210,173,110,.02))}
+  .vs__col h3{font-family:var(--head);font-weight:600;font-size:1.2rem;margin-bottom:16px}
+  .vs__col ul{list-style:none}
+  .vs__col li{padding:11px 0;border-top:1px solid var(--line);font-size:.97rem;color:var(--text-2)}
+  .vs__col--me li{color:var(--text)}
+
+  /* Review */
+  .review{padding:clamp(80px,12vh,130px) 0 0;text-align:center}
+  .review__stars{color:var(--gold);letter-spacing:5px;font-size:1.2rem}
+  .review blockquote{font-family:var(--head);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.25;max-width:24ch;margin:16px auto}
+  .review figcaption{color:var(--text-3);font-size:.95rem}
+  .review figcaption a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+  /* FAQ */
   .faq{padding:clamp(80px,12vh,140px) 0 0}
-  .faq__list{max-width:760px;margin:0 auto;padding:0 var(--pad)}
-  .faq__item{border-bottom:1px solid var(--line);padding:6px 0}
-  .faq__item summary{
-    font-family:var(--font-head);font-weight:600;font-size:1.08rem;
-    padding:18px 0;cursor:pointer;list-style:none;position:relative;padding-right:36px;
-  }
-  .faq__item summary::-webkit-details-marker{display:none}
-  .faq__item summary::after{
-    content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);
-    font-size:1.4rem;color:var(--lime-deep);transition:transform .25s ease;
-  }
-  .faq__item[open] summary::after{transform:translateY(-50%) rotate(45deg)}
-  .faq__item p{color:var(--ink-2);padding:0 0 20px;font-size:.97rem;max-width:62ch}
+  .faq__grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(30px,5vw,80px)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{font-family:var(--head);font-weight:600;font-size:1.06rem;padding:20px 36px 20px 0;cursor:pointer;list-style:none;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--gold);transition:transform .25s ease}
+  .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+  .faq details p{color:var(--text-2);padding:0 0 22px;font-size:.97rem;max-width:62ch}
 
-  .final{
-    background:var(--dark);color:#fff;text-align:center;
-    margin-top:clamp(80px,12vh,140px);padding:clamp(90px,14vh,160px) var(--pad);
-    position:relative;overflow:hidden;
-  }
-  .final::before{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(700px 400px at 50% 120%,rgba(108,178,255,.17),transparent 60%);
-  }
-  .final__title{
-    font-family:var(--font-head);font-weight:700;position:relative;
-    font-size:clamp(2.4rem,7vw,5rem);line-height:1.04;letter-spacing:-.02em;
-  }
-  .final__title em{font-style:normal;color:var(--lime)}
-  .final p{position:relative;color:rgba(255,255,255,.65);font-size:1.12rem;margin:22px 0 34px}
-  .final__cta{position:relative;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .final__micro{font-size:.9rem;color:rgba(255,255,255,.4);margin-top:26px}
+  /* Final */
+  .final{position:relative;margin-top:clamp(80px,12vh,140px);padding:clamp(100px,16vh,170px) var(--pad);text-align:center;overflow:hidden}
+  .final__bg{position:absolute;inset:0;background:url(films/hero.jpg) center/cover;opacity:.28}
+  .final::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(15,14,12,.3),rgba(15,14,12,.95) 75%)}
+  .final > *:not(.final__bg){position:relative;z-index:2}
+  .final h2{font-family:var(--head);font-weight:600;font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;letter-spacing:-.025em;max-width:16ch;margin:0 auto}
+  .final h2 em{font-style:normal;color:var(--gold)}
+  .final p{color:var(--text-2);font-size:1.1rem;margin:20px auto 32px;max-width:48ch}
+  .final small{display:block;margin-top:22px;color:var(--text-3);font-size:.9rem}
 
-  .footer{background:var(--dark);border-top:1px solid var(--line-dark)}
-  .footer__inner{
-    max-width:var(--wrap);margin:0 auto;padding:26px var(--pad);
-    display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
-    color:rgba(255,255,255,.4);font-size:.85rem;
-  }
-  .footer__inner p:last-child{max-width:60ch}
-  .footer__legal{white-space:nowrap}
-  .footer__legal a{color:rgba(255,255,255,.85);text-decoration:underline;text-underline-offset:3px}
+  .footer{border-top:1px solid var(--line)}
+  .footer__inner{max-width:var(--wrap);margin:0 auto;padding:26px var(--pad);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--text-3);font-size:.86rem}
+  .footer a{color:var(--text-2);text-decoration:underline;text-underline-offset:3px}
 
-  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
+  [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
   [data-reveal].is-in{opacity:1;transform:none}
 
   @media(max-width:1024px){
     .nav__links{display:none}
-    .offer__steps{grid-template-columns:1fr}
-    .statsbar__inner{grid-template-columns:repeat(2,1fr)}
+    .films{grid-template-columns:1fr 1fr}
+    .featured__grid{grid-template-columns:minmax(0,1fr) 220px}
+    .faq__grid{grid-template-columns:1fr}
   }
-  @media(max-width:640px){
+  @media(max-width:760px){
+    .yours{grid-template-columns:1fr;padding:22px}
+    .facts__inner{grid-template-columns:1fr 1fr}
+    .featured__grid{grid-template-columns:1fr}
+    .featured__grid .phone{max-width:260px;margin:0 auto}
+    .films,.compare__grid,.inside,.steps,.vs{grid-template-columns:1fr}
+.films--teaser,.more--page .films{grid-template-columns:1fr}
+    .films--teaser .film:nth-child(3){display:none}
     .hero__cta .btn{width:100%}
-    .final__cta .btn{width:100%}
+    .nav__brand span{display:none}
+    .hero__caption{display:none}
   }
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
     [data-reveal]{opacity:1;transform:none}
   }
 </style>
 </head>
 <body>
 
-
-<header class="nav">
+<header class="nav" id="nav">
   <div class="nav__inner">
-    <a class="nav__brand" href="#top">Ivan Gojic<span>/ Immobilienfilme</span></a>
+    <a class="nav__brand" href="#top">Ivan Gojic<span>Immobilienfilme</span></a>
     <nav class="nav__links" aria-label="Hauptnavigation">
-      <a href="#work">Filme</a>
-      <a href="#offer">Ablauf</a>
-      <a href="#compare">Warum</a>
-      <a href="#faq">FAQ</a>
+      <a href="#vorschau">Vorschau und Film</a>
+      <a href="#clips">Vorschau-Clips</a>
+            <a href="#fragen">Fragen</a>
     </nav>
-    <a class="btn btn--lime btn--s" href="#cta">Vorschau-Clip anfragen</a>
+    <a class="btn btn--gold btn--s" href="#kontakt">Vorschau anfragen</a>
   </div>
 </header>
 
 <main id="top">
 
-  <section class="hero">
+  <section class="hero" aria-label="Einleitung">
+    <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="films/hero.jpg" aria-hidden="true">
+      <source src="films/hero.mp4" type="video/mp4">
+    </video>
     <div class="hero__inner">
-      <p class="hero__eyebrow" data-reveal>Cineastische Filme aus Ihren Exposé-Fotos. Sonst nichts.</p>
-      <h1 class="hero__title">Fotos zeigen Räume.<br>Ein Film lässt <em>wohnen.</em></h1>
-      <p class="hero__sub" data-reveal>Ich verwandle die Fotos, die Sie bereits haben, in cineastische Objektfilme — ohne Drehtag, ohne Drohnengenehmigung, ohne Termin vor Ort. Ihr Vorschau-Clip zeigt Ihnen die Wirkung am eigenen Objekt, bevor Sie irgendetwas entscheiden.</p>
-      <div class="hero__cta" data-reveal>
-        <a class="btn btn--lime btn--l" href="#cta">Vorschau-Clip für mein Objekt
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <p class="eyebrow">Objektfilme aus Exposé-Fotos</p>
+      <h1 class="hero__title">Ihre Fotos zeigen Räume. Ein Film zeigt <em>das Zuhause.</em></h1>
+      <p class="hero__sub">Aus den Fotos, die Sie schon haben, entsteht ein kompletter Objektfilm mit Musik und Ihrem Logo, dazu die Hochformat-Version für Instagram. Kein Drehtag, kein Termin vor Ort, fertig in 48 Stunden.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="#vorschau">Kundenfilm ansehen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn--ghost btn--l" href="#work">Filme ansehen</a>
+        <a class="btn btn--line" href="#kontakt">Vorschau für mein Objekt</a>
       </div>
-      <div class="hero__proof" data-reveal>
-        <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener"><b>★★★★★</b> 5,0 auf Google</a><i>·</i><span>Vorschau vorab</span><i>·</i><span>Festpreis, keine Überraschungen</span>
+      <div class="hero__proof">
+        <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener"><b>★★★★★</b>5,0 auf Google</a>
+        <span>Für Makler und Gastgeber in Deutschland, Österreich und der Schweiz</span>
+      </div>
+    </div>
+    <p class="hero__caption">Ausschnitt aus einem Kundenfilm für <a href="https://www.gruene-makler.de/" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">Die Grünen Makler</a>, entstanden aus Exposé-Fotos</p>
+  </section>
+
+  <div class="facts">
+    <div class="facts__inner">
+      <div class="fact" data-reveal><strong>48 Stunden</strong><span>bis zum fertigen Film</span></div>
+      <div class="fact" data-reveal><strong>Kein Drehtag</strong><span>Ihre Exposé-Fotos reichen</span></div>
+      <div class="fact" data-reveal><strong>Quer und Hoch</strong><span>Website, Portale, Instagram</span></div>
+      <div class="fact" data-reveal><strong>Unbegrenzt</strong><span>Korrekturrunden</span></div>
+    </div>
+  </div>
+
+  <section class="compare" id="vorschau">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Vorschau und fertiger Film</p>
+      <h2 class="h2" data-reveal>Der Vorschau-Clip ist nur der Anfang.</h2>
+      <p class="lead" data-reveal>Bevor Sie sich entscheiden, bekommen Sie einen kurzen Vorschau-Clip aus den Fotos im Inserat. Er zeigt, wie Ihre Bilder in Bewegung wirken. Der komplette Film spielt in einer anderen Liga: mehr Räume, ein durchdachter Weg durchs Objekt, Musik, Farbkorrektur und Ihr Logo. Hier dasselbe Haus in beiden Stufen.</p>
+
+      <div class="compare__grid">
+        <div class="compare__item" data-reveal>
+          <div class="player player--wide">
+            <video controls playsinline preload="none" poster="films/badfischau-vorschau.jpg"><source src="films/badfischau-vorschau.mp4" type="video/mp4"></video>
+          </div>
+          <h3><span class="pill">Schritt 1</span>Vorschau-Clip</h3>
+          <p>Rund 20 Sekunden aus den Online-Fotos des Inserats. Kostenlos und unverbindlich.</p>
+        </div>
+        <div class="compare__item" data-reveal>
+          <div class="player player--wide">
+            <video controls playsinline preload="none" poster="films/badfischau.jpg"><source src="films/badfischau.mp4" type="video/mp4"></video>
+          </div>
+          <h3><span class="pill pill--gold">Schritt 2</span>Kompletter Film</h3>
+          <p>85 Sekunden, alle wichtigen Räume, Musik, Ihr Logo am Ende, dazu das Hochformat für Instagram. Mit Originalfotos in voller Auflösung wird er noch schärfer.</p>
+        </div>
+      </div>
+
+      <div class="yours" data-reveal>
+        <div class="yours__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div>
+          <h3>Ihr Film, Ihr Geschmack.</h3>
+          <p>Bei Ihrem Film entscheiden Sie: Stil, Song, Tempo, Reihenfolge der Räume und welche Szenen am Anfang stehen. Ich setze es um und ändere so lange, bis er zu Ihnen und Ihrem Objekt passt.</p>
+          <ul><li>Ihr Stil</li><li>Ihr Song</li><li>Ihr Tempo</li><li>Ihre Reihenfolge</li><li>Ihr Logo</li></ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="statsbar">
-    <div class="statsbar__inner">
-      <div class="statsbar__item" data-reveal><strong>48h</strong><span>von Freigabe bis Film</span></div>
-      <div class="statsbar__item" data-reveal><strong>0 Termine</strong><span>kein Dreh, keine Anreise</span></div>
-      <div class="statsbar__item" data-reveal><strong>2 Formate</strong><span>Exposé + Instagram Reels</span></div>
-      <div class="statsbar__item" data-reveal><strong>1 Ziel</strong><span>aus Klicks Anfragen machen</span></div>
+  <section class="more" id="clips">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Vorschau-Clips</p>
+      <h2 class="h2" data-reveal>Schon die Vorschau zeigt, was in Ihren Fotos steckt.</h2>
+      <p class="lead" data-reveal>Jeder dieser Clips entstand aus den Fotos, die online im Inserat oder auf der Website standen. Für Makler genauso wie für Gastgeber.</p>
+
+      <div class="films films--teaser">
+        <article class="film" data-reveal>
+          <div class="film__media"><video controls playsinline preload="none" poster="films/clip-finca.jpg"><source src="films/clip-finca.mp4" type="video/mp4"></video></div>
+          <div class="film__body"><span class="tag">Finca</span><h3>Finca auf Mallorca</h3><p>Mediterrane Fassade, Kaminzimmer mit Steinwand, Garten mit Pool. <a href="https://www.dehaas-immobilien.com/de/0__443_suche1_3_0/luxusfinca-sant-llorenc-etv-pool.html" target="_blank" rel="noopener">Zum Exposé von De Haas &amp; Partner</a></p></div>
+        </article>
+        <article class="film" data-reveal>
+          <div class="film__media"><video controls playsinline preload="none" poster="films/clip-kroatien.jpg"><source src="films/clip-kroatien.mp4" type="video/mp4"></video></div>
+          <div class="film__body"><span class="tag">Ferienvilla</span><h3>Ferienvilla in Kroatien</h3><p>Pool zwischen Olivenbäumen, Dachterrasse, das Meer vor der Altstadt. <a href="https://villavalzadar.com/" target="_blank" rel="noopener">Zur Villa Val</a></p></div>
+        </article>
+      </div>
+      <div class="more__all" data-reveal>
+        <a class="btn btn--line" href="vorschau-clips.html">Alle Vorschau-Clips ansehen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <p class="clips__note" data-reveal>Musik und Schnitt sind in jedem Vorschau-Clip nur ein Vorschlag. Im fertigen Film bestimmen Sie, wie er klingt und wirkt.</p>
+    </div>
+  </section>
+
+  <section class="paper" id="inhalt">
+    <div class="wrap">
+      <div class="inside">
+        <div>
+          <p class="eyebrow" data-reveal>Was im Film steckt</p>
+          <h2 class="h2" data-reveal>Ein kompletter Film. Kein Baukasten.</h2>
+          <p class="lead" data-reveal>Ein Festpreis pro Objekt, vorher vereinbart. Querformat und Hochformat sind immer beide dabei, Sie müssen sich nicht entscheiden.</p>
+        </div>
+        <div data-reveal>
+          <ul class="inside__list">
+            <li><b>01</b>30 bis 90 Sekunden, je nach Objekt</li>
+            <li><b>02</b>Alle wichtigen Räume in 12 bis 16 Kamerafahrten</li>
+            <li><b>03</b>Passende Musik und Farbkorrektur</li>
+            <li><b>04</b>Ihr Logo am Ende</li>
+            <li><b>05</b>Hochformat-Version für Instagram</li>
+            <li><b>06</b>Lieferung in 48 Stunden</li>
+            <li><b>07</b>Korrekturrunden unbegrenzt</li>
+          </ul>
+          <p class="inside__note">Ob Tempo, Musik, Reihenfolge oder eine einzelne Szene: Ich ändere den Film so lange, bis er wirklich sitzt.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step" data-reveal>
+          <span class="step__n">SCHRITT 1</span>
+          <h3>Link schicken</h3>
+          <p>Der Link zu Ihrem Inserat oder Ihrer Website genügt. Ich arbeite mit den Fotos, die es schon gibt.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="step__n">SCHRITT 2</span>
+          <h3>Vorschau ansehen</h3>
+          <p>Sie bekommen einen kurzen Clip Ihres Objekts und sehen die Wirkung, bevor Sie etwas zusagen.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="step__n">SCHRITT 3</span>
+          <h3>Film in 48 Stunden</h3>
+          <p>Nach Ihrer Zusage kommt die Rechnung. Sobald sie beglichen ist, haben Sie den kompletten Film innerhalb von 48 Stunden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="versus">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Im Vergleich</p>
+      <h2 class="h2" data-reveal>Filmische Wirkung, ohne Drehtag.</h2>
+      <div class="vs">
+        <div class="vs__col vs__col--me" data-reveal>
+          <h3>Film aus Ihren Fotos</h3>
+          <ul>
+            <li>Fertig in 48 Stunden</li>
+            <li>Kein Termin, niemand muss vor Ort sein</li>
+            <li>Unabhängig von Wetter und Jahreszeit</li>
+            <li>Vorschau vorab, Festpreis vorher vereinbart</li>
+            <li>Querformat und Hochformat inklusive</li>
+          </ul>
+        </div>
+        <div class="vs__col" data-reveal>
+          <h3>Videograf mit Drehtag</h3>
+          <ul>
+            <li>Oft mehrere Wochen bis zum Film</li>
+            <li>Drehtermin, Anreise, Abstimmung mit Eigentümern</li>
+            <li>Abhängig vom passenden Wetter</li>
+            <li>Ergebnis erst nach dem Dreh sichtbar</li>
+            <li>Hochformat häufig gegen Aufpreis</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="review" aria-label="Kundenstimme">
-    <figure class="review__card" data-reveal>
+    <figure class="wrap" data-reveal>
       <div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-      <blockquote class="review__quote">„Professionell, schnell, zuverlässig. Vielen Dank!“</blockquote>
-      <figcaption class="review__who">P. Sabado, Immobilienmakler aus Düsseldorf · <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener">Bewertung auf Google ansehen</a></figcaption>
+      <blockquote>„Professionell, schnell, zuverlässig. Vielen Dank!“</blockquote>
+      <figcaption>P. Sabado, Immobilienmakler aus Düsseldorf · <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener">Bewertung auf Google</a></figcaption>
     </figure>
   </section>
 
-  <section class="work" id="work">
-    <div class="section__head">
-      <p class="eyebrow" data-reveal>Die Filme</p>
-      <h2 class="h2" data-reveal>Jede Kamerafahrt unten entstand<br>aus einem einzigen Foto.</h2>
-    </div>
-    <div class="work__grid">
-
-      <article class="filmcard" data-reveal>
-        <video controls muted playsinline preload="metadata" poster="assets/santaponsa-poster.jpg">
-          <source src="assets/santaponsa.mp4" type="video/mp4">
-        </video>
-        <div class="filmcard__body">
-          <div class="filmcard__head">
-            <h3>Villa in Nova Santa Ponsa, Mallorca</h3>
-            <span class="filmcard__tag">Schneller Schnitt · Neubau mit Meerblick · Vorschau aus 6 Exposé-Fotos</span>
-          </div>
-          <p class="filmcard__note">Schnitte auf den Takt, Speed-Ramps, Titel im Bild: Pool, Terrasse, Anflug, Wohnzimmer, Schlafzimmer, Sonnenuntergang. Architektur, Möblierung und Küstenlinie exakt wie fotografiert.</p>
-        </div>
-      </article>
-
-      <article class="filmcard" data-reveal>
-        <video controls muted playsinline preload="metadata" poster="assets/scottsdale-poster.jpg">
-          <source src="assets/scottsdale.mp4" type="video/mp4">
-        </video>
-        <div class="filmcard__body">
-          <div class="filmcard__head">
-            <h3>Anwesen in Scottsdale, Arizona</h3>
-            <span class="filmcard__tag">Ruhiger Schnitt · Desert Mountain · Vorschau aus 6 Listing-Fotos</span>
-          </div>
-          <p class="filmcard__note">Lange, ruhige Kamerafahrten: Sunset-Aerial, Motor Court, Great Room, Nacht-Terrasse. Derselbe Prozess funktioniert auf jedem Markt der Welt.</p>
-        </div>
-      </article>
-
-    </div>
-    <p class="work__note" data-reveal>Ruhig oder schnell geschnitten, ganz wie Sie möchten. Das hier sind kurze Vorschau-Ausschnitte. Die kompletten Filme gehen deutlich weiter: länger, alle wichtigen Räume, mit Musik und Ihrem Logo.</p>
-  </section>
-
-  <section class="offer" id="offer">
-    <div class="section__head">
-      <p class="eyebrow eyebrow--dark" data-reveal>Der Ablauf</p>
-      <h2 class="h2 h2--light" data-reveal>Sie riskieren nichts.<br>Ich zeige es zuerst.</h2>
-    </div>
-    <div class="offer__steps">
-      <div class="ostep" data-reveal>
-        <span class="ostep__n">1</span>
-        <h3>Exposé-Link senden</h3>
-        <p>Eine Nachricht mit dem Link zu Ihrem Objekt. Mehr brauche ich nicht — ich arbeite mit den vorhandenen Fotos.</p>
+  <section class="faq" id="fragen">
+    <div class="wrap faq__grid">
+      <div>
+        <p class="eyebrow" data-reveal>Fragen</p>
+        <h2 class="h2" data-reveal>Was Kunden vorher wissen wollen.</h2>
       </div>
-      <div class="ostep" data-reveal>
-        <span class="ostep__n">2</span>
-        <h3>Vorschau-Clip ansehen</h3>
-        <p>Sie bekommen einen kurzen Clip Ihres Objekts — echte Kamerafahrten, Ihre Räume. Sie sehen die Wirkung, bevor Sie einen Cent ausgeben.</p>
-      </div>
-      <div class="ostep" data-reveal>
-        <span class="ostep__n">3</span>
-        <h3>Gefällt&#8217;s? Film in 48h</h3>
-        <p>Festpreis vorab vereinbart. Voller Film mit Musik, Farbkorrektur, Ihrem Logo und Reels-Formaten — 48 Stunden nach Freigabe.</p>
+      <div data-reveal>
+        <details>
+          <summary>Wie entsteht ein Film ohne Dreh?</summary>
+          <p>Aus jedem Foto berechne ich eine echte Kamerafahrt: einen Flug über das Grundstück, eine Fahrt durchs Wohnzimmer, einen Blick über die Terrasse. Ich plane den Weg durchs Objekt, wähle die stärksten Bilder, schneide alles auf die Musik und prüfe jeden Film Bild für Bild.</p>
+        </details>
+        <details>
+          <summary>Sieht das Objekt im Film noch aus wie in echt?</summary>
+          <p>Ja, das ist meine wichtigste Regel. Architektur, Räume, Möbel und Ausblick bleiben so, wie sie fotografiert wurden. Fällt Ihnen trotzdem eine Stelle auf, die nicht passt, tausche ich die Szene aus. Die Korrekturrunden sind unbegrenzt.</p>
+        </details>
+        <details>
+          <summary>Welche Fotos brauchen Sie?</summary>
+          <p>Meistens keine zusätzlichen. Die Fotos aus Ihrem Inserat oder von Ihrer Website reichen. Wenn Sie die Originaldateien in voller Auflösung haben, wird der Film noch schärfer.</p>
+        </details>
+        <details>
+          <summary>Für wen eignet sich das?</summary>
+          <p>Für Makler, die ihre Objekte stärker präsentieren wollen, und für Gastgeber: Ferienhäuser, Chalets, Seminarhäuser, Höfe und Eventlocations. Überall dort, wo Menschen sich vorher ein Bild machen wollen, bevor sie anfragen.</p>
+        </details>
+        <details>
+          <summary>Was kostet ein Film?</summary>
+          <p>Ein Festpreis pro Objekt, vorher vereinbart, deutlich unter dem, was ein Drehtag kostet. Den Vorschau-Clip Ihres Objekts sehen Sie vorher kostenlos. Für Makler mit mehreren Objekten gibt es Pakete.</p>
+        </details>
       </div>
     </div>
-    <p class="offer__note" data-reveal>Ein Festpreis pro Objekt — <strong>vor Beginn vereinbart, nie nach Stunden</strong>. Für Portfolios mit mehreren Objekten gibt es monatliche Kontingente.</p>
   </section>
 
-  <section class="compare" id="compare">
-    <div class="section__head">
-      <p class="eyebrow" data-reveal>Warum das funktioniert</p>
-      <h2 class="h2" data-reveal>Filmische Qualität.<br><span class="muted">Ohne Drehtag-Zirkus.</span></h2>
-    </div>
-    <div class="compare__wrap" data-reveal>
-      <table class="compare__table">
-        <thead>
-          <tr><th></th><th class="me">Mit mir</th><th>Videograf vor Ort</th><th>Nur Fotos</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Zeit bis zum Film</td><td class="me">48 Stunden</td><td>2–6 Wochen inkl. Terminfindung</td><td>—</td></tr>
-          <tr><td>Sie sehen das Ergebnis…</td><td class="me">vorab als Vorschau-Clip</td><td>nach Dreh &amp; Rechnung</td><td>—</td></tr>
-          <tr><td>Preis</td><td class="me">Festpreis, vorab vereinbart</td><td>€1.000–3.000 + Anfahrt</td><td>0 € — und 0 Wirkung</td></tr>
-          <tr><td>Aufwand für Sie</td><td class="me">ein Link, eine Nachricht</td><td>Termin, Zugang, Begleitung</td><td>—</td></tr>
-          <tr><td>Drohnenaufnahmen</td><td class="me">inklusive, ohne Genehmigung</td><td>Aufpreis + Auflagen</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="compare__how" data-reveal>Wie sind 48 Stunden möglich? Ich arbeite mit einem KI-gestützten Produktionssystem, das aus jedem einzelnen Foto eine echte Kamerafahrt errechnet — während ich jede Entscheidung treffe, die zählt: Bildauswahl, Route durchs Objekt, Schnitt, Qualitätskontrolle. Jeder Film wird Bild für Bild geprüft: Architektur, Möblierung und Ausblick bleiben exakt so, wie Ihr Fotograf sie aufgenommen hat.</p>
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="section__head">
-      <p class="eyebrow" data-reveal>Fragen</p>
-      <h2 class="h2" data-reveal>Oft gefragt. Beantwortet.</h2>
-    </div>
-    <div class="faq__list">
-      <details class="faq__item" data-reveal>
-        <summary>Wie entsteht ein Film ohne Dreh?</summary>
-        <p>Aus jedem Exposé-Foto errechnet mein Produktionssystem eine reale Kamerabewegung — einen Anflug, eine Poolfahrt, einen Gang durchs Wohnzimmer. Ich plane die Route durchs Objekt, wähle die stärksten Bilder und schneide die Fahrten zu einem Film. Beide Filme oben sind exakt so entstanden.</p>
-      </details>
-      <details class="faq__item" data-reveal>
-        <summary>Sieht das Objekt im Film noch aus wie in echt?</summary>
-        <p>Ja — das ist meine wichtigste Regel. Architektur, Räume, Möbel und Ausblick bleiben exakt wie fotografiert; verbessert werden nur Bewegung und Licht. Jeder Film durchläuft eine Bild-für-Bild-Kontrolle, bevor Sie ihn sehen. Ein Film, der die Immobilie verfälscht, würde Ihnen bei der Besichtigung schaden — deshalb passiert das nicht.</p>
-      </details>
-      <details class="faq__item" data-reveal>
-        <summary>Was kostet ein Film?</summary>
-        <p>Ein Festpreis pro Objekt, vor Beginn vereinbart — deutlich unter dem, was ein Videograf mit Drehtag und Anfahrt kostet. Den Vorschau-Clip Ihres Objekts sehen Sie vorher. Für Makler mit mehreren Objekten gibt es monatliche Kontingente.</p>
-      </details>
-      <details class="faq__item" data-reveal>
-        <summary>Welche Fotos brauchen Sie von mir?</summary>
-        <p>Meistens keine — ich arbeite direkt mit den Fotos aus Ihrem öffentlichen Exposé. Wenn Sie Originaldateien in höherer Auflösung haben, wird das Ergebnis noch besser. Für unveröffentlichte Objekte reichen die Fotos Ihres Fotografen.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="final" id="cta">
-    <h2 class="final__title">Schicken Sie Ihr Exposé.<br>Sehen Sie es als <em>Film.</em></h2>
-    <p data-reveal>Vorschau-Clip Ihres Objekts vorab — Sie entscheiden erst danach.</p>
-    <div class="final__cta" data-reveal>
-      <a class="btn btn--lime btn--l" href="mailto:ivangojic9@gmail.com?subject=Vorschau-Clip%20f%C3%BCr%20mein%20Objekt&body=Hallo%20Ivan%2C%20hier%20ist%20der%20Link%20zu%20meinem%20Expos%C3%A9%3A%20">E-Mail mit Exposé-Link senden</a>
-    </div>
-    <p class="final__micro" data-reveal>ivangojic9@gmail.com</p>
+  <section class="final" id="kontakt">
+    <div class="final__bg" aria-hidden="true"></div>
+    <h2>Schicken Sie mir Ihr Objekt. Sie sehen es als <em>Film.</em></h2>
+    <p>Ein Link zum Inserat genügt. Sie bekommen einen Vorschau-Clip und entscheiden danach.</p>
+    <a class="btn btn--gold" href="mailto:ivanimmobilienfilme@gmail.com?subject=Vorschau-Clip%20f%C3%BCr%20mein%20Objekt&amp;body=Hallo%20Ivan%2C%20hier%20ist%20der%20Link%20zu%20meinem%20Objekt%3A%20">Link per E-Mail senden</a>
+    <small>ivanimmobilienfilme@gmail.com</small>
   </section>
 
 </main>
 
 <footer class="footer">
   <div class="footer__inner">
-    <p>© 2026 Ivan Gojic — Immobilienfilme</p>
-    <p class="footer__legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
-    <p>Die gezeigten Filme sind unaufgeforderte Arbeitsproben aus öffentlich einsehbaren Exposé-Fotos — genau das ist das Prinzip: Ich zeige zuerst, Sie entscheiden danach.</p>
+    <p>© 2026 Ivan Gojic · Immobilienfilme</p>
+    <p><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
   </div>
 </footer>
 
 <script>
-  (function () {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
-  })();
-</script>
+(function(){
+  var nav=document.getElementById("nav");
+  function onScroll(){nav.classList.toggle("is-solid",window.scrollY>40)}
+  onScroll();window.addEventListener("scroll",onScroll,{passive:true});
 
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var hero=document.getElementById("heroVideo");
+  if(reduce&&hero){hero.removeAttribute("autoplay");hero.pause();}
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-in");io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll("[data-reveal]").forEach(function(el){io.observe(el)});
+
+  // Nur ein Film spielt gleichzeitig
+  var films=[].slice.call(document.querySelectorAll("main video:not(.hero__video)"));
+  films.forEach(function(v){v.addEventListener("play",function(){films.forEach(function(o){if(o!==v)o.pause()})})});
+
+  // Quer/Hoch umschalten
+  document.querySelectorAll(".film[data-wide]").forEach(function(card){
+    var v=card.querySelector("video");
+    card.querySelectorAll(".switch button").forEach(function(b){
+      b.addEventListener("click",function(){
+        var tall=b.dataset.format==="tall";
+        if(card.classList.contains("is-tall")===tall)return;
+        card.classList.toggle("is-tall",tall);
+        card.querySelectorAll(".switch button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});
+        v.pause();
+        v.setAttribute("poster",tall?card.dataset.tallPoster:card.dataset.widePoster);
+        v.querySelector("source").src=tall?card.dataset.tall:card.dataset.wide;
+        v.load();
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
