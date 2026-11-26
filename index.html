@@ -161,6 +161,15 @@
   .review blockquote{font-family:var(--head);font-weight:500;font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.25;max-width:24ch;margin:16px auto}
   .review figcaption{color:var(--text-3);font-size:.95rem}
   .review figcaption a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+  .review__head{text-align:center}
+  .review__head .h2{margin:10px auto 0;text-align:center}
+  .review__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;text-align:left;align-items:stretch}
+  .rcard{margin:0;padding:28px 26px;border:1px solid rgba(255,255,255,.1);border-radius:18px;background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:16px}
+  .rcard__stars{color:var(--gold);letter-spacing:3px;font-size:.95rem}
+  .review .rcard blockquote{font-family:var(--head);font-weight:500;font-size:1.15rem;line-height:1.4;max-width:none;margin:0;flex:1}
+  .review .rcard figcaption{display:flex;flex-direction:column;gap:3px;font-size:.92rem}
+  .rcard figcaption strong{color:var(--text,#fff);font-weight:600}
+  @media (max-width:860px){.review__grid{grid-template-columns:1fr}}
 
   /* FAQ */
   .faq{padding:clamp(80px,12vh,140px) 0 0}
@@ -388,12 +397,30 @@
     </div>
   </section>
 
-  <section class="review" aria-label="Kundenstimme">
-    <figure class="wrap" data-reveal>
-      <div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div>
-      <blockquote>„Professionell, schnell, zuverlässig. Vielen Dank!“</blockquote>
-      <figcaption>P. Sabado, Immobilienmakler aus Düsseldorf · <a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener">Bewertung auf Google</a></figcaption>
-    </figure>
+  <section class="review" aria-label="Kundenstimmen">
+    <div class="wrap">
+      <div class="review__head" data-reveal>
+        <div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <h2 class="h2">Das sagen meine Kunden</h2>
+      </div>
+      <div class="review__grid">
+        <figure class="rcard" data-reveal>
+          <div class="rcard__stars" aria-hidden="true">★★★★★</div>
+          <blockquote>„Professionell, schnell, zuverlässig. Dankeschön!“</blockquote>
+          <figcaption><strong>P. Sabado</strong><span>Immobilienmakler, Düsseldorf</span><a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener">Bewertung auf Google</a></figcaption>
+        </figure>
+        <figure class="rcard" data-reveal>
+          <div class="rcard__stars" aria-hidden="true">★★★★★</div>
+          <blockquote>„Kreativ, schnell und perfekt gelaufen, danke!“</blockquote>
+          <figcaption><strong>Nikolaj Puschek</strong><span>Immobilienmakler, Niederösterreich</span><a href="https://g.page/r/CYuMeN-AV6TvECE" target="_blank" rel="noopener">Bewertung auf Google</a></figcaption>
+        </figure>
+        <figure class="rcard" data-reveal>
+          <div class="rcard__stars" aria-hidden="true">★★★★★</div>
+          <blockquote>„Die Zusammenarbeit war blitzschnell, effizient und sehr ertragreich. Das Ergebnis kann sich sehen lassen, und alles in allem bin ich sehr zufrieden. So sollten Vorhaben immer erledigt werden.“</blockquote>
+          <figcaption><strong>Rolf Buchwald</strong><span>Seminarhof Pegasus, bei Hamburg</span></figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
   <section class="faq" id="fragen">
